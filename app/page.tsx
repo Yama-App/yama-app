@@ -1,65 +1,106 @@
-import Image from "next/image";
+import Image from 'next/image';
+
+import { AppCard } from '@/app/components/app_card';
+import { FaEnvelope, FaXTwitter } from 'react-icons/fa6';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main className="mx-auto max-w-3xl px-6 py-8">
+      <section className="flex flex-col items-center text-center">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+          src="/yama-app-logo.svg"
+          alt="yamaapp logo"
+          width={96}
+          height={96}
+          className="mb-4"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+
+        <h1 className="text-foreground text-3xl font-bold">Yama</h1>
+
+        <p className="mt-3 max-w-md text-base text-zinc-600 dark:text-zinc-400">
+          個人でアプリをつくっている Yama です。
+          <br />
+          今まで５つのアプリを作りました。
+          <br />( 内一つは売却済み )
+        </p>
+
+        <div className="mt-4 flex items-center gap-4 text-zinc-500 dark:text-zinc-400">
+          {/* メール */}
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:chameleonjapanapp@gmail.com"
+            className="transition hover:text-zinc-700 dark:hover:text-zinc-200"
+            aria-label="メールを送る"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            <FaEnvelope className="h-5 w-5" />
           </a>
+
+          {/* X */}
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://x.com/yama250tr"
+            className="transition hover:text-zinc-700 dark:hover:text-zinc-200"
+            aria-label="X のプロフィールへ"
           >
-            Documentation
+            <FaXTwitter className="h-5 w-5" />
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="mt-12 flex flex-col items-center text-center">
+        <Image src="/qchan.svg" alt="きゅーちゃん" width={64} height={64} className="mb-2" />
+
+        <h2 className="text-foreground text-lg font-semibold">きゅーちゃん</h2>
+
+        <p className="mt-2 max-w-sm text-sm text-zinc-600 dark:text-zinc-400">
+          うちで暮らしているセキセイインコです。
+          <br />
+          うちで育てたほうれん草が大好きです。
+        </p>
+
+        <a
+          href="/q-chan"
+          className="mt-4 inline-block rounded-full bg-zinc-100 px-4 py-1.5 text-sm text-zinc-700 transition hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+        >
+          きゅーちゃんの部屋
+        </a>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="text-foreground mb-6 text-center text-2xl font-semibold">アプリ一覧</h2>
+
+        <div className="grid gap-6 sm:grid-cols-2">
+          <AppCard
+            icon="/app_icons/patapata.svg"
+            title="patapata"
+            href="apps/patapata"
+            subtitle="鳥さん専用記録アプリ"
+            description="鳥さんとの毎日を、そっと見守りながら支えてくれるアプリです。健康管理や放鳥タイマーなど、鳥さんのための機能をやさしくまとめました。"
+          />
+
+          <AppCard
+            icon="/app_icons/duely.svg"
+            title="duely"
+            href="apps/duely"
+            subtitle="無限投票SNS"
+            description="「1人1票」という常識を超えて、好きなだけ投票できる新しい SNS です。熱量がそのまま票数に反映され、少数派でも勝つことができるアプリです。"
+          />
+
+          <AppCard
+            icon="/app_icons/sheetmaker.svg"
+            title="sheetmaker"
+            href="apps/sheetmaker"
+            subtitle="マークシート作成アプリ"
+            description="資格試験や受験勉強に使える、かんたんマークシート作成アプリです。記述式や問題文にも対応しており、様々な形式に対応しています。"
+          />
+
+          <AppCard
+            icon="/app_icons/teamey.svg"
+            title="teamey"
+            href="apps/teamey"
+            subtitle="座席表・グループ分けアプリ"
+            description="飲み会や席替えなどのグループ分け・座席表作成アプリです。完成したものはテキストや画像などの形式で簡単に共有することができます。"
+          />
+        </div>
+      </section>
+    </main>
   );
 }
