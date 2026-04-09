@@ -8,18 +8,22 @@ export default function QChanPage() {
         <div className="flex flex-col items-center">
           <Image src="/qchan.svg" alt="きゅーちゃん" width={128} height={128} className="mb-3" />
 
-          <h1 className="text-foreground text-xl font-semibold">きゅーちゃんの部屋</h1>
+          <h1 className="text-xl font-semibold text-zinc-800 dark:text-zinc-100">
+            きゅーちゃんの部屋
+          </h1>
+
           <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
             うちで暮らしているセキセイインコのきゅーちゃんを紹介します。
           </p>
         </div>
 
         {/* プロフィールカード */}
-        <div className="mt-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-zinc-200 dark:bg-zinc-800 dark:ring-zinc-700">
-          <h2 className="text-foreground mb-5 text-center text-xl font-semibold">プロフィール</h2>
+        <div className="mt-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+          <h2 className="mb-5 text-center text-xl font-semibold text-zinc-800 dark:text-zinc-100">
+            プロフィール
+          </h2>
 
           <div className="flex flex-col items-center">
-            {/* プロフィール内容 */}
             <ul className="space-y-3 text-left text-zinc-700 dark:text-zinc-300">
               <li>
                 <span className="font-semibold">年齢：</span>
@@ -43,9 +47,10 @@ export default function QChanPage() {
             </ul>
           </div>
         </div>
+
         {/* ベストショットカード */}
-        <div className="mt-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-zinc-200 dark:bg-zinc-800 dark:ring-zinc-700">
-          <h2 className="text-foreground mb-5 text-center text-xl font-semibold">
+        <div className="mt-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-700">
+          <h2 className="mb-5 text-center text-xl font-semibold text-zinc-800 dark:text-zinc-100">
             📸 ベストショット
           </h2>
 
@@ -55,7 +60,7 @@ export default function QChanPage() {
               alt="きゅーちゃんのベストショット"
               width={1535}
               height={1067}
-              className="h-40 w-auto rounded-xl shadow-sm"
+              className="h-40 w-auto rounded-xl object-cover shadow-sm"
               loading="eager"
             />
           </div>

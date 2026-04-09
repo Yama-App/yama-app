@@ -15,7 +15,8 @@ export default function Home() {
           className="mb-4"
         />
 
-        <h1 className="text-foreground text-3xl font-bold">Yama</h1>
+        {/* ← 修正 */}
+        <h1 className="text-3xl font-bold text-zinc-800 dark:text-zinc-100">Yama</h1>
 
         <p className="mt-3 max-w-md text-base text-zinc-600 dark:text-zinc-400">
           個人でアプリをつくっている Yama です。
@@ -48,7 +49,8 @@ export default function Home() {
       <section className="mt-12 flex flex-col items-center text-center">
         <Image src="/qchan.svg" alt="きゅーちゃん" width={64} height={64} className="mb-2" />
 
-        <h2 className="text-foreground text-lg font-semibold">きゅーちゃん</h2>
+        {/* ← 修正 */}
+        <h2 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">きゅーちゃん</h2>
 
         <p className="mt-2 max-w-sm text-sm text-zinc-600 dark:text-zinc-400">
           うちで暮らしているセキセイインコです。
@@ -65,7 +67,10 @@ export default function Home() {
       </section>
 
       <section className="mt-16">
-        <h2 className="text-foreground mb-6 text-center text-2xl font-semibold">アプリ一覧</h2>
+        {/* ← 修正 */}
+        <h2 className="mb-6 text-center text-2xl font-semibold text-zinc-800 dark:text-zinc-100">
+          アプリ一覧
+        </h2>
 
         <div className="grid gap-6 sm:grid-cols-2">
           <AppCard

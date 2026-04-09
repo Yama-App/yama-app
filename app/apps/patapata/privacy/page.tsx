@@ -1,8 +1,9 @@
 export default function PatapataPrivacyPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
-      <h1 className="text-foreground mb-8 text-3xl font-semibold">プライバシーポリシー</h1>
-
+      <h1 className="mb-8 text-3xl font-semibold text-zinc-800 dark:text-zinc-100">
+        プライバシーポリシー
+      </h1>
       <div className="prose prose-zinc dark:prose-invert max-w-none leading-relaxed">
         <p className="text-base">
           <strong>
