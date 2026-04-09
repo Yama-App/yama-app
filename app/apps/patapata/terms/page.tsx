@@ -1,6 +1,9 @@
+import { BackToAppLink } from '@/app/components/back_to_app_link';
+
 export default function PatapataTermsPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
+      <BackToAppLink app="patapata" />
       <h1 className="mb-8 text-3xl font-semibold text-zinc-800 dark:text-zinc-100">利用規約</h1>
 
       <div className="prose prose-zinc dark:prose-invert max-w-none leading-relaxed">
