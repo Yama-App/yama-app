@@ -55,7 +55,7 @@ export default function Home() {
         <p className="mt-2 max-w-sm text-sm text-zinc-600 dark:text-zinc-400">
           うちで暮らしているセキセイインコです。
           <br />
-          うちで育てたほうれん草が大好きです。
+          うちで育てた小松菜が大好きです。
         </p>
 
         <a
