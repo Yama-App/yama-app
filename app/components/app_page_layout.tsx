@@ -8,6 +8,7 @@ type AppPageLayoutProps = {
   googlePlayId?: string;
   termsUrl: string;
   privacyUrl: string;
+  contact?: string;
   children?: React.ReactNode;
 };
 
@@ -19,6 +20,7 @@ export function AppPageLayout({
   googlePlayId,
   termsUrl,
   privacyUrl,
+  contact,
   children,
 }: AppPageLayoutProps) {
   const appStoreUrl = appStoreId ? `https://apps.apple.com/app/id${appStoreId}` : null;
@@ -69,6 +71,15 @@ export function AppPageLayout({
         >
           プライバシーポリシー
         </a>
+
+        {contact && (
+          <a
+            href={contact}
+            className="rounded-md bg-zinc-200 px-4 py-2 text-sm text-zinc-700 transition hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
+          >
+            お問い合わせ-contact-
+          </a>
+        )}
       </div>
     </main>
   );

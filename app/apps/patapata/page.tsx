@@ -10,6 +10,7 @@ export default function PatapataPage() {
       appStoreId="6761470449"
       termsUrl="/apps/patapata/terms"
       privacyUrl="/apps/patapata/privacy"
+      contact="/apps/patapata/contact"
     >
       <section className="mb-10">
         {/* 見出し */}
