@@ -31,21 +31,6 @@ export default function PatapataContactPage() {
         </p>
       </section>
 
-      {/* FAQ */}
-      <section className="mb-10 rounded-lg border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-700 dark:bg-zinc-900/40">
-        <h2 className="mb-3 flex items-center gap-2 text-xl font-semibold text-zinc-800 dark:text-zinc-100">
-          ❓ よくある質問（FAQ）
-        </h2>
-        <ul className="list-disc pl-6 text-zinc-700 dark:text-zinc-300">
-          <li className="mb-2">
-            <strong>写真が追加できません。</strong>
-            <br />
-            iOS の設定アプリから「プライバシーとセキュリティ → 写真」で Patapata
-            に写真アクセスを許可してください。
-          </li>
-        </ul>
-      </section>
-
       {/* Links */}
       <section className="mb-16 rounded-lg border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-700 dark:bg-zinc-900/40">
         <h2 className="mb-3 flex items-center gap-2 text-xl font-semibold text-zinc-800 dark:text-zinc-100">
@@ -95,21 +80,6 @@ export default function PatapataContactPage() {
             chameleonjapanapp@gmail.com
           </a>
         </p>
-      </section>
-
-      {/* FAQ EN */}
-      <section className="mb-10 rounded-lg border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-700 dark:bg-zinc-900/40">
-        <h2 className="mb-3 flex items-center gap-2 text-xl font-semibold text-zinc-800 dark:text-zinc-100">
-          ❓ Frequently Asked Questions
-        </h2>
-        <ul className="list-disc pl-6 text-zinc-700 dark:text-zinc-300">
-          <li className="mb-2">
-            <strong>I can’t add photos.</strong>
-            <br />
-            Please open the iOS Settings app and allow photo access for Patapata under “Privacy &
-            Security → Photos”.
-          </li>
-        </ul>
       </section>
 
       {/* Links EN */}
