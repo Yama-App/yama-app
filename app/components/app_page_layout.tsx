@@ -32,23 +32,35 @@ export function AppPageLayout({
   return (
     <main className="mx-auto max-w-3xl px-6 py-8 text-center">
       {/* アイコン */}
-      <Image src={icon} alt={title} width={128} height={128} className="mx-auto" />
+      <Image src={icon} alt={title} width={256} height={256} className="mx-auto" />
 
       {/* タイトル */}
-      <h1 className="mt-4 text-3xl font-semibold text-zinc-800 dark:text-zinc-100">{title}</h1>
-      <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{subtitle}</p>
+      <h1 className="text-3xl font-black text-zinc-800 dark:text-zinc-100">{title}</h1>
+      <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">{subtitle}</p>
 
       {/* ダウンロードバッジ */}
       <div className="mt-8 flex justify-center gap-4">
         {appStoreUrl && (
           <a href={appStoreUrl} target="_blank">
-            <Image src="/badges/appstore.svg" alt="App Store" width={120} height={40} />
+            <Image
+              src="/badges/appstore.svg"
+              alt="App Store"
+              height={40}
+              width={120}
+              style={{ width: 'auto' }}
+            />
           </a>
         )}
 
         {googlePlayUrl && (
           <a href={googlePlayUrl} target="_blank">
-            <Image src="/badges/googleplay.svg" alt="Google Play" width={135} height={40} />
+            <Image
+              src="/badges/googleplay.svg"
+              alt="Google Play"
+              height={40}
+              width={135}
+              style={{ width: 'auto' }}
+            />
           </a>
         )}
       </div>
@@ -56,28 +68,28 @@ export function AppPageLayout({
       {/* アプリ固有のコンテンツ */}
       {children && <section className="my-12 text-left">{children}</section>}
 
-      {/* 利用規約 & プライバシーポリシー */}
-      <div className="flex flex-col items-center gap-3">
+      {/* 利用規約 & プライバシーポリシー & お問い合わせ */}
+      <div className="mt-12 flex flex-col items-center gap-4">
         <a
           href={termsUrl}
-          className="rounded-md bg-zinc-200 px-4 py-2 text-sm text-zinc-700 transition hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
+          className="rounded-md bg-zinc-200 px-6 py-3 text-base font-bold text-zinc-800 transition hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
         >
-          利用規約
+          利用規約（Terms of Service）
         </a>
 
         <a
           href={privacyUrl}
-          className="rounded-md bg-zinc-200 px-4 py-2 text-sm text-zinc-700 transition hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
+          className="rounded-md bg-zinc-200 px-6 py-3 text-base font-bold text-zinc-800 transition hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
         >
-          プライバシーポリシー
+          プライバシーポリシー（Privacy Policy）
         </a>
 
         {contact && (
           <a
             href={contact}
-            className="rounded-md bg-zinc-200 px-4 py-2 text-sm text-zinc-700 transition hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
+            className="rounded-md bg-zinc-200 px-6 py-3 text-base font-bold text-zinc-800 transition hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
           >
-            お問い合わせ-contact-
+            お問い合わせ（Contact）
           </a>
         )}
       </div>

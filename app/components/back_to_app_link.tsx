@@ -17,10 +17,11 @@ export function BackToAppLink({ app, label }: BackToAppLinkProps) {
   return (
     <Link
       href={`/apps/${app}`}
-      className="mb-6 inline-flex items-center gap-2 text-lg text-zinc-600 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200"
+      className="mb-8 inline-flex items-center gap-3 rounded-full bg-zinc-100 px-4 py-2 text-lg font-bold text-zinc-700 transition hover:-translate-x-1 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
     >
-      <Image src={`/app_icons/${app}.svg`} alt="" width={20} height={20} />
-      <span>← {text}</span>
+      <span className="text-xl">←</span>
+      <Image src={`/app_icons/${app}.svg`} alt="" width={24} height={24} className="rounded-md" />
+      <span>{text}</span>
     </Link>
   );
 }

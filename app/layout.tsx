@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist_Mono } from 'next/font/google';
 import './globals.css';
 
 import Header from './components/header';
 import { Footer } from './components/footer';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+import { M_PLUS_Rounded_1c } from 'next/font/google';
+
+const rounded = M_PLUS_Rounded_1c({
   subsets: ['latin'],
+  weight: ['400', '500', '700', '800', '900'], // ← 太さ最大まで使える
+  variable: '--font-sans',
 });
 
 const geistMono = Geist_Mono({
@@ -17,15 +20,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://yamaapp.net'),
-  title: 'Yama@個人開発',
-  description:
-    'Yama が個人開発しているアプリを紹介するサイトです。セキセイインコのきゅーちゃんもいます。',
+  title: 'Yama-App',
+  description: 'Yama です。あぷりつくってます。セキセイインコのきゅーちゃんもいます。',
   openGraph: {
-    title: 'Yama@個人開発',
-    description:
-      'Yama が個人開発しているアプリを紹介するサイトです。セキセイインコのきゅーちゃんもいます。',
+    title: 'Yama-App',
+    description: 'Yama です。あぷりつくってます。セキセイインコのきゅーちゃんもいます。',
     url: 'https://yamaapp.net',
-    siteName: 'Yama@個人開発',
+    siteName: 'Yama-App',
     type: 'website',
     locale: 'ja_JP',
     images: [
@@ -39,9 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Yama@個人開発',
-    description:
-      'Yama が個人開発しているアプリを紹介するサイトです。セキセイインコのきゅーちゃんもいます。',
+    title: 'Yama-App',
+    description: 'Yama です。あぷりつくってます。セキセイインコのきゅーちゃんもいます。',
     images: {
       url: '/ogp/opengraph-image.png',
       type: 'image/png',
@@ -51,13 +51,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="ja" className={`${rounded.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-white text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100">
         <Header />
         <main className="flex-1">{children}</main>

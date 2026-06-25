@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,49 +7,68 @@ type AppCardProps = {
   icon: string;
   title: string;
   subtitle?: string;
-  description: string;
   href: string;
+  appStoreId?: string;
+  googlePlayId?: string;
 };
 
-export function AppCard({ icon, title, description, subtitle, href }: AppCardProps) {
-  const [showBadges, setShowBadges] = useState(false);
+export function AppCard({ icon, title, subtitle, href, appStoreId, googlePlayId }: AppCardProps) {
+  const appStoreUrl = appStoreId ? `https://apps.apple.com/app/id${appStoreId}` : null;
+
+  const googlePlayUrl = googlePlayId
+    ? `https://play.google.com/store/apps/details?id=${googlePlayId}`
+    : null;
 
   return (
-    <div className="rounded-xl border border-zinc-200 p-6 transition hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-900">
-      {/* タイトル・アイコン・サブタイトル */}
+    <div className="rounded-2xl bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:bg-zinc-900 dark:hover:shadow-zinc-800/50">
+      {/* アイコン中心のヘッダー */}
       <Link href={href} className="block">
-        <div className="flex cursor-pointer flex-col gap-1">
-          <div className="flex items-center gap-3">
-            <Image src={icon} alt={`${title} icon`} width={32} height={32} />
-            <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-100">{title}</h3>
-          </div>
+        <div className="flex cursor-pointer flex-col items-center gap-4 text-center">
+          <Image src={icon} alt={`${title} icon`} width={112} height={112} className="rounded-lg" />
+          <h3 className="text-3xl font-black text-zinc-800 dark:text-zinc-100">{title}</h3>
 
           {subtitle && (
-            <p className="ml-[44px] text-sm text-zinc-600 dark:text-zinc-400">{subtitle}</p>
+            <p className="text-base font-normal text-zinc-600 dark:text-zinc-400">{subtitle}</p>
           )}
         </div>
       </Link>
 
-      {/* 説明文 */}
-      <p className="mt-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{description}</p>
+      {/* ストアバッジ */}
+      <div className="mt-8 flex flex-col items-center justify-center gap-4 px-4 sm:flex-row">
+        {appStoreUrl && (
+          <a
+            href={appStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition active:scale-95"
+          >
+            <Image
+              src="/badges/appstore.svg"
+              alt="App Store"
+              height={40}
+              width={100}
+              style={{ width: 'auto' }}
+            />
+          </a>
+        )}
 
-      {/* ダウンロードボタン */}
-      <div className="mt-8 flex justify-center">
-        <button
-          onClick={() => setShowBadges(!showBadges)}
-          className="rounded-md bg-zinc-200 px-3 py-1 text-sm text-zinc-700 transition hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
-        >
-          {showBadges ? '閉じる' : 'ダウンロード'}
-        </button>
+        {googlePlayUrl && (
+          <a
+            href={googlePlayUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition active:scale-95"
+          >
+            <Image
+              src="/badges/googleplay.svg"
+              alt="Google Play"
+              height={40}
+              width={110}
+              style={{ width: 'auto' }}
+            />
+          </a>
+        )}
       </div>
-
-      {/* バッジ表示 */}
-      {showBadges && (
-        <div className="animate-fadeIn mt-8 flex justify-center gap-4 px-4">
-          <Image src="/badges/appstore.svg" alt="App Store" width={120} height={40} />
-          <Image src="/badges/googleplay.svg" alt="Google Play" width={135} height={40} />
-        </div>
-      )}
     </div>
   );
 }
