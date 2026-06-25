@@ -59,13 +59,7 @@ export function AppCard({ icon, title, subtitle, href, appStoreId, googlePlayId 
             rel="noopener noreferrer"
             className="transition active:scale-95"
           >
-            <Image
-              src="/badges/googleplay.svg"
-              alt="Google Play"
-              height={40}
-              width={110}
-              style={{ width: 'auto' }}
-            />
+            <Image src="/badges/googleplay.svg" alt="Google Play" height={40} width={135} />
           </a>
         )}
       </div>

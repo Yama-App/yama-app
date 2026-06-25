@@ -54,13 +54,7 @@ export function AppPageLayout({
 
         {googlePlayUrl && (
           <a href={googlePlayUrl} target="_blank">
-            <Image
-              src="/badges/googleplay.svg"
-              alt="Google Play"
-              height={40}
-              width={135}
-              style={{ width: 'auto' }}
-            />
+            <Image src="/badges/googleplay.svg" alt="Google Play" height={40} width={135} />
           </a>
         )}
       </div>
