@@ -81,15 +81,6 @@ export default function Home() {
           />
 
           <AppCard
-            icon="/app_icons/duely.svg"
-            title="Duely"
-            href="apps/duely"
-            subtitle="無限投票SNS"
-            appStoreId="6748050757"
-            googlePlayId="yama.reiya.duely"
-          />
-
-          <AppCard
             icon="/app_icons/sheetmaker.svg"
             title="Sheetmaker"
             href="apps/sheetmaker"
